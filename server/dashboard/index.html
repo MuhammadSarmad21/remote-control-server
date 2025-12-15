@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Remote Control Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Control Server Dashboard</h1>
+      <p>Monitor connected clients and run actions in real time.</p>
+    </header>
+
+    <main class="app-layout">
+      <section class="panel" id="clients-panel">
+        <div class="panel-header">
+          <h2>Connected Clients</h2>
+          <span id="client-count" class="badge">0</span>
+        </div>
+        <div id="client-list" class="client-list"></div>
+      </section>
+
+      <section class="panel" id="responses-panel">
+        <div class="panel-header">
+          <h2>Client Responses</h2>
+        </div>
+        <div id="response-stack" class="response-stack"></div>
+      </section>
+    </main>
+
+    <template id="client-card-template">
+      <div class="client-card">
+        <div class="client-meta">
+          <strong class="client-name"></strong>
+          <div class="client-details"></div>
+        </div>
+        <div class="client-actions">
+          <button data-action="system_info">System Info</button>
+          <button data-action="list_dir">Browse</button>
+          <button data-action="run_command" class="danger">Command</button>
+          <button data-action="screenshot">📷 Screenshot</button>
+          <button data-action="upload_file">📤 Upload</button>
+        </div>
+      </div>
+    </template>
+
+    <script type="module" src="/static/app.js"></script>
+  </body>
+</html>
+

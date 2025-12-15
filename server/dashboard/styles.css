@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css?lang=en-GB&family=Product+Sans|Roboto:400,700");
+
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.gb_yb {
+  font-family: "Product Sans", "Roboto", "Segoe UI", sans-serif;
+}
+
+.app-header {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #1d4ed8, #9333ea);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.app-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.8rem;
+}
+
+.app-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 10px 40px rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.badge {
+  background-color: #0ea5e9;
+  color: #0f172a;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.client-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.client-card {
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.client-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.client-name {
+  font-size: 1rem;
+}
+
+.client-details {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.client-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.client-actions button {
+  flex: 1 1 calc(50% - 0.25rem);
+  min-width: 0;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  transition: transform 0.1s ease, background 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.client-actions button:hover {
+  transform: translateY(-1px);
+  background: #1d4ed8;
+}
+
+.client-actions button.danger {
+  background: #f97316;
+}
+
+.response-stack {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.response-card {
+  border-radius: 12px;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.2);
+  margin-left: 0.5rem;
+}
+
+.response-card.pending {
+  border-color: #fcd34d;
+}
+
+.response-card.success {
+  border-color: #34d399;
+}
+
+.response-card.error {
+  border-color: #f87171;
+}
+
+.response-card pre {
+  margin: 0;
+  max-height: 280px;
+  overflow: auto;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* When pre contains HTML (directory listings), reset white-space */
+.response-card pre.has-html {
+  white-space: normal;
+}
+
+/* Directory listing styles */
+.dir-header {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #60a5fa;
+}
+
+.dir-error {
+  color: #f87171;
+  margin-bottom: 0.5rem;
+}
+
+.dir-empty {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.dir-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.dir-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0;
+  line-height: 1.5;
+}
+
+.dir-entry.is-file {
+  padding-left: 0;
+}
+
+.dir-entry.is-dir {
+  padding-left: 0;
+}
+
+.entry-icon {
+  flex-shrink: 0;
+}
+
+.entry-name {
+  flex: 1;
+}
+
+.file-size {
+  color: #94a3b8;
+  font-size: 0.8em;
+}
+
+.file-error {
+  color: #fbbf24;
+  font-size: 0.8em;
+}
+
+.download-btn {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 4px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.1s ease;
+  line-height: 1;
+}
+
+.download-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.1);
+}
+
+.download-btn:active {
+  transform: scale(0.95);
+}
+
+/* Screenshot display styles */
+.screenshot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 8px;
+}
+
+.screenshot-image {
+  max-width: 100%;
+  max-height: 600px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  background: #0f172a;
+}
+
+.screenshot-info {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.download-screenshot-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.download-screenshot-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+}
+

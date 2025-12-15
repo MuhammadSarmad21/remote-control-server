@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: remote-control-server
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m server.app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
