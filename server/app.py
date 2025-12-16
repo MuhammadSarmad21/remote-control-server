@@ -2,9 +2,7 @@ from __future__ import annotations
 
 
 
-# Gevent monkey patching - must be first
-import gevent.monkey
-gevent.monkey.patch_all()
+
 
 
 
