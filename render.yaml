@@ -3,7 +3,7 @@ services:
     name: remote-control-server
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn server.app:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --worker-class gthread
+    startCommand: gunicorn server.app:app --bind 0.0.0.0:$PORT --workers 1 --worker-class eventlet --timeout 300
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
